@@ -1,8 +1,6 @@
 package Sorting;
 
-import java.util.*;
 import java.io.*;
-import java.lang.reflect.Array;
 
 public class HeapSort {
 	private int[] heap;
@@ -76,11 +74,6 @@ public class HeapSort {
 		}
 		return temp;
 	}
-	private void Add(int val) {
-		heap[heap.length-1] = val;
-		heap = BuildHeap(heap);
-	}
-	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int inputCount = Integer.parseInt(br.readLine());
