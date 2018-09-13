@@ -108,11 +108,12 @@ public class MergeSort<T extends Comparable<T>> {
 		LinkedList<Integer> list = new LinkedList<Integer>();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int inputCount = Integer.parseInt(br.readLine());
-		for(int i=0; i<inputCount; i++) {
-			list.add(Integer.parseInt(br.readLine()));
+		//int inputCount = Integer.parseInt(br.readLine());
+		for(int i=0; i<100000; i++) {
+			list.add(1000-i);
 		}
 		MergeSort<Integer> ms = new MergeSort<Integer>(list);
+		long start = System.currentTimeMillis();
 		LinkedList<Integer>[] result = ms.Sort();
 		for(int i=0; i<result.length; i++) {
 			for(int j=0; j<result[i].size(); j++) {
@@ -121,5 +122,6 @@ public class MergeSort<T extends Comparable<T>> {
 				bw.flush();
 			}
 		}
+		System.out.println(System.currentTimeMillis() - start);
 	}
 }
